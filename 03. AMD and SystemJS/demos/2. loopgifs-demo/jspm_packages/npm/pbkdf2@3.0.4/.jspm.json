@@ -90,9 +90,9 @@
     "create-hmac": "create-hmac@^1.1.2",
     "buffer": "github:jspm/nodelibs-buffer@^0.1.0",
     "process": "github:jspm/nodelibs-process@^0.1.0",
+    "systemjs-json": "github:systemjs/plugin-json@^0.1.0",
     "crypto": "github:jspm/nodelibs-crypto@^0.1.0",
     "child_process": "github:jspm/nodelibs-child_process@^0.1.0",
-    "path": "github:jspm/nodelibs-path@^0.1.0",
-    "systemjs-json": "github:systemjs/plugin-json@^0.1.0"
+    "path": "github:jspm/nodelibs-path@^0.1.0"
   }
 }

@@ -1,3 +1,6 @@
+/* */ 
+"format global";
+"exports traceur";
 (function(global) {
   'use strict';
   if (global.$traceurRuntime) {
