@@ -1,3 +1,6 @@
+/*jslint nomen: true*/
+/*global _, console */
+
 /* 
 Create a function that:
 *   **Takes** an array of animals
@@ -5,7 +8,7 @@ Create a function that:
 *   **groups** the animals by `species`
     *   the groups are sorted by `species` descending
 *   **sorts** them ascending by `legsCount`
-	*	if two animals have the same number of legs sort them by name
+    *   if two animals have the same number of legs sort them by name
 *   **prints** them to the console in the format:
 
 ```
@@ -25,9 +28,49 @@ Create a function that:
 *   **Use underscore.js for all operations**
 */
 
-function solve(){
-  return function (animals) {
-  };
+function solve() {
+    'use strict';
+
+    return function (animals) {
+        _.mixin({
+            repeat: function (str, number) {
+                return _(_.range(number))
+                    .chain()
+                    .map(function () {
+                        return str;
+                    })
+                    .reduce(function (accumulator, item) {
+                        return accumulator + item;
+                    }, '')
+                    .value();
+            }
+        });
+
+        _(animals)
+            .chain()
+            .groupBy('species')
+            .sortBy('species')
+            .reverse()
+            .map(function (groupOfAnimals) {
+                return _(groupOfAnimals)
+                    .chain()
+                    .sortBy('name')
+                    .sortBy('legsCount')
+                    .value();
+            })
+            .each(function (groupOfAnimals) {
+                var delimiter = _('-').repeat(groupOfAnimals[0].species.length + 1);
+
+                console.log(delimiter);
+                console.log(groupOfAnimals[0].species + ':');
+                console.log(delimiter);
+
+                _(groupOfAnimals)
+                    .each(function (animal) {
+                        console.log(animal.name + ' has ' + animal.legsCount + ' legs');
+                    });
+            });
+    };
 }
 
 module.exports = solve;

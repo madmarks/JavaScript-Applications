@@ -1,3 +1,6 @@
+/*jslint nomen: true*/
+/*global _, console */
+
 /* 
 Create a function that:
 *   Takes an array of students
@@ -10,9 +13,32 @@ Create a function that:
 *   **Use underscore.js for all operations**
 */
 
-function solve(){
-  return function (students) {
-  };
+function solve() {
+    'use strict';
+
+    return function (students) {
+
+        _(students)
+            .chain()
+            .map(function (student) {
+                var sum = _.reduce(student.marks, function (memo, value) {
+                    return memo + value;
+                }, 0);
+
+                return {
+                    fullName: student.firstName + ' ' + student.lastName,
+                    averageMark: sum / student.marks.length
+                };
+            })
+            //.sortBy('averageMark')
+            //.last()
+            .max(function(student) {
+                return student.averageMark;
+            })
+            .tap(function (bestStudent) {
+                console.log(bestStudent.fullName + ' has an average score of ' + bestStudent.averageMark);
+            });
+    };
 }
 
 module.exports = solve;

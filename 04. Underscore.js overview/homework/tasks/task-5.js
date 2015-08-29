@@ -1,3 +1,6 @@
+/*jslint nomen: true*/
+/*global _, console */
+
 /* 
 Create a function that:
 *   **Takes** an array of animals
@@ -7,9 +10,20 @@ Create a function that:
 *   **Use underscore.js for all operations**
 */
 
-function solve(){
-  return function (animals) {
-  };
+function solve() {
+    "use strict";
+
+    return function (animals) {
+
+        _(animals)
+            .chain()
+            .reduce(function (memo, animal) {
+                return memo + animal.legsCount;
+            }, 0)
+            .tap(function (totalNumberOfLegs) {
+                console.log('Total number of legs: ' + totalNumberOfLegs);
+            });
+    };
 }
 
 module.exports = solve;

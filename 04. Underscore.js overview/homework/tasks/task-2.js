@@ -1,3 +1,6 @@
+/*jslint nomen: true*/
+/*global _, console */
+
 /*
 Create a function that:
 *   Takes an array of students
@@ -8,9 +11,26 @@ Create a function that:
 *   **Use underscore.js for all operations**
 */
 
-function solve(){
-  return function (students) {
-  };
+function solve() {
+    'use strict';
+
+    return function (students) {
+
+        _(students)
+            .chain()
+            .filter(function (student) {
+                return student.age >= 18 && student.age <= 24;
+            })
+            .map(function (student) {
+                return {
+                    fullName: student.firstName + ' ' + student.lastName
+                };
+            })
+            .sortBy('fullName')
+            .each(function (student) {
+                console.log(student.fullName);
+            });
+    };
 }
 
 module.exports = solve;
