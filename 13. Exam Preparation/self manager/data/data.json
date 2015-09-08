@@ -1,0 +1,62 @@
+{
+  "users": [
+    {
+      "username": "Doncho",
+      "passHash": "4cb5ba2355368d4dfd14c9eee9a134791f7001cb",
+      "usernameLower": "doncho",
+      "authKey": "undefined+tusvd@Kh_@ixbA*Q$fvLmq(CJJmu*DN%E^i@OUr&eoAJn!*uak",
+      "id": "d69707b4-d06d-42ac-bc10-1dde5aaafcf7",
+      "events": [
+        {
+          "id": 449037,
+          "title": "Test",
+          "category": "Work",
+          "description": "",
+          "date": "2015-09-08T23:00:00.000Z",
+          "creatorId": "d69707b4-d06d-42ac-bc10-1dde5aaafcf7",
+          "users": [
+            "d69707b4-d06d-42ac-bc10-1dde5aaafcf7",
+            "d69707b4-d06d-42ac-bc10-1dde5aaafcf7"
+          ]
+        },
+        {
+          "id": 449037,
+          "title": "Test",
+          "category": "Work",
+          "description": "",
+          "date": "2015-09-08T23:00:00.000Z",
+          "creatorId": "d69707b4-d06d-42ac-bc10-1dde5aaafcf7",
+          "users": [
+            "d69707b4-d06d-42ac-bc10-1dde5aaafcf7",
+            "d69707b4-d06d-42ac-bc10-1dde5aaafcf7"
+          ]
+        },
+        {
+          "id": 792579,
+          "title": "Test",
+          "category": "Free time",
+          "description": "",
+          "date": "2015-09-17T23:00:00.000Z",
+          "creatorId": "d69707b4-d06d-42ac-bc10-1dde5aaafcf7",
+          "users": [
+            "d69707b4-d06d-42ac-bc10-1dde5aaafcf7"
+          ]
+        }
+      ],
+      "todos": [
+        {
+          "id": 27882,
+          "text": "qwe",
+          "state": true,
+          "category": "Home"
+        },
+        {
+          "id": 365117,
+          "text": "NEW TODO",
+          "state": false,
+          "category": "Home"
+        }
+      ]
+    }
+  ]
+}
