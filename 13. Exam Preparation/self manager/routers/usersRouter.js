@@ -21,6 +21,7 @@ module.exports = function(db) {
     })
     .post('/', function(req, res) {
       var user = req.body;
+      console.log(user);
       user.usernameLower = user.username.toLowerCase();
       user.authKey = authKeyGenerator.get(user.id);
       if (db('users').find({
@@ -42,7 +43,7 @@ module.exports = function(db) {
       var dbUser = db('users').find({
         usernameLower: user.username.toLowerCase()
       });
-      if (!dbUser || dbUser.pashHash !== user.pashHash) {
+      if (!dbUser || dbUser.passHash !== user.passHash) {
         res.status(404)
           .json('Username or password is invalid');
       }
